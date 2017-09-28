@@ -6,16 +6,17 @@
 	<style>
 		* { box-sizing: border-box; margin: 0; padding: 0; }
 		.clear { width: 100%; height: 5vh; }
-		#yandex-map { height: 90vh; }
+		#yandex-map, #map, #gmap-container { height: 90vh; }
 	</style>
 </head>
 <body>
-	<button class="gmap-reroute" data-point="0">Отдел продаж</button>
+	<!-- <button class="gmap-reroute" data-point="0">Отдел продаж</button>
 	<button class="gmap-reroute" data-point="1">Жилой комплекс</button>
-	<div class="clear"></div>
-	<div id="yandex-map"></div>
+	<div class="clear"></div> -->
+	<div id="map"></div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="gmap-core.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwJU4t7ZvGGVkdoqBBK7xvlED9CyK49qM&callback=gmap_init"></script>
+	<script src="gmap-plugin.js"></script>
+	<!-- <script src="gmap-core.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwJU4t7ZvGGVkdoqBBK7xvlED9CyK49qM&callback=gmap_init"></script> -->
 </body>
 </html>
