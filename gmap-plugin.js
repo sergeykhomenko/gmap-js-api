@@ -23,7 +23,9 @@ function GMap( mapWrapper, points, initOptions = {} ){
 		mapElement.id = self.options.map_id || self.defaults.map_id;
 
 		var mapAPI = document.createElement('script');
-		mapAPI.src = 'https://maps.googleapis.com/maps/api/js?key=' + google_maps_key + '&callback=' + mapWrapper + '.init';
+		mapAPI.src = 'https://maps.googleapis.com/maps/api/js?key=' + google_maps_key;
+		//  + '&callback=' + mapWrapper + '.init'
+		console.log('https://maps.googleapis.com/maps/api/js?key=' + google_maps_key);
 
 		document.getElementById(mapWrapper).append(mapElement);
 		document.getElementById(mapWrapper).append(mapAPI);
@@ -44,7 +46,9 @@ function GMap( mapWrapper, points, initOptions = {} ){
 			}
 		);
 
-		self.directions = new google.maps.DirectionsRenderer();
+		self.directions = new google.maps.DirectionsRenderer( {
+			preserveViewport: true // no zoom when render
+		} );
 		self.directions.setMap( self.map );
 
 		self.marker = new google.maps.InfoWindow( {
@@ -87,6 +91,8 @@ function GMap( mapWrapper, points, initOptions = {} ){
 			self.marker.setContent( destination_point.name );
 			self.marker.setPosition( destination_point.pos );
 		}
+
+		self.map.setCenter( customer_position );
 	}
 
 	this.locationError = function() {
@@ -134,6 +140,3 @@ function GMap( mapWrapper, points, initOptions = {} ){
 		self.addJQuerySwitches();
 	}
 }
-
-var google_maps_key = 'AIzaSyCwJU4t7ZvGGVkdoqBBK7xvlED9CyK49qM';
-var map = new GMap('map', [{name: 'Отдел продаж', pos: { lat: 50.0117, lng: 36.309 }}, {name: 'Жилой комплекс', pos: { lat: 50.019, lng: 36.2 }}] );

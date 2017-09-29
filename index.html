@@ -6,17 +6,21 @@
 	<style>
 		* { box-sizing: border-box; margin: 0; padding: 0; }
 		.clear { width: 100%; height: 5vh; }
-		#yandex-map, #map, #gmap-container { height: 90vh; }
+		#map, #map_zecond, #gmap-container { height: 300px }
+		#map { margin-bottom: 200px; }
 	</style>
 </head>
 <body>
-	<!-- <button class="gmap-reroute" data-point="0">Отдел продаж</button>
-	<button class="gmap-reroute" data-point="1">Жилой комплекс</button>
-	<div class="clear"></div> -->
 	<div id="map"></div>
+	<div id="map_zecond"></div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="gmap-plugin.js"></script>
-	<!-- <script src="gmap-core.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwJU4t7ZvGGVkdoqBBK7xvlED9CyK49qM&callback=gmap_init"></script> -->
+	<script>
+		var google_maps_key = 'AIzaSyCwJU4t7ZvGGVkdoqBBK7xvlED9CyK49qM';
+		var map = new GMap('map', [{name: 'Отдел продаж', pos: { lat: 50.0117, lng: 36.309 }}, {name: 'Жилой комплекс', pos: { lat: 50.019, lng: 36.2 }}], { zoom: 15 } );
+		// map.init();
+		// var map_zecond = new GMap('map_zecond', [{name:'Дом', pos: { lat: 49, lng: 60 } }]);
+	</script>
+	<script id="test"></script>
 </body>
 </html>

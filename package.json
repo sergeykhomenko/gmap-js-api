@@ -1,0 +1,24 @@
+{
+  "name": "gmaps",
+  "version": "1.0.0",
+  "description": "\"Google maps API plugin\"",
+  "main": "gmap-core.js",
+  "scripts": {
+    "build" : "babel src -d dist --presets es2015"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergeykhomenko/gmap-js-api.git"
+  },
+  "author": "Sergey Khomenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergeykhomenko/gmap-js-api/issues"
+  },
+  "homepage": "https://github.com/sergeykhomenko/gmap-js-api#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
