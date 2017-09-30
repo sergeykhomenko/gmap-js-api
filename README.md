@@ -4,6 +4,8 @@ TODO: finish "Plugin Options"
 ## Requirements
  - jQuery
 
+For building lib from the sources use ```npm run build```
+
 ## How to use
 You can call map render using next way:
 
